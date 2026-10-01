@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChessMind - Tutor Invisible de Ajedrez</title>
+  <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>ChessMind ♟️</h1>
+    <p>Tutor inteligente de ajedrez · aprende jugando</p>
+  </header>
+
+  <div class="container">
+    <main class="main-content">
+      <div class="board-wrap">
+        <span id="turn-chip" class="chip">♙ Juegan blancas</span>
+        <div id="board" class="board"></div>
+      </div>
+
+      <div class="panel">
+        <div id="mission-box" class="card">
+          <div id="progress"></div>
+          <span id="mission-meta"></span>
+          <p id="mission-desc">Cargando posición...</p>
+        </div>
+
+        <div id="tutor-box" class="card">
+          <h3>🎓 Tu tutor</h3>
+          <div id="tutor-msg" class="msg">Arrastra una pieza para responder. Si te atoras, pide una pista.</div>
+          <button id="hint-btn" class="btn secondary">💡 Pista</button>
+          <button id="retry-btn" class="btn hidden">↩ Reintentar</button>
+          <button id="next-btn" class="btn primary hidden">Siguiente ➜</button>
+          <button id="skip-btn" class="btn secondary">Saltar tutorial</button>
+        </div>
+
+        <div id="metrics" class="card">
+          <h3>📊 Tu nivel en tiempo real</h3>
+          <div class="elo"><strong id="elo-display">1000</strong><span class="badge" id="level-badge">Calibrando…</span></div>
+          <div class="metric-info"><span>Visión táctica</span><b id="tactics-pct">50%</b></div>
+          <div class="bar"><div id="tactics-bar" style="width: 50%;"></div></div>
+        </div>
+
+        <div id="feedback-box" class="card hidden">
+          <h2>🏆 Tu perfil de competencias</h2>
+          <div id="profile-output"></div>
+          <button id="restart-btn" class="btn primary" onclick="location.reload()">🔄 Jugar de nuevo</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
